@@ -2,6 +2,12 @@
 
 body{
   min-height: 2000px;
+  font-family: 'Roboto', sans-serif;
+}
+// ! custom container fluid style
+.container-fluid{
+  padding-right: 50px;
+  padding-left: 50px;
 }
 .auth-title{
   color: $second-color;

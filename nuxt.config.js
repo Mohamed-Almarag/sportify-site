@@ -29,6 +29,7 @@ export default {
   plugins: [
     '~/plugins/bootstrap-vue.js',
     '~/plugins/validation.js',
+    '~/plugins/filter.js',
     // '~/plugins/axios.js',
   ],
 

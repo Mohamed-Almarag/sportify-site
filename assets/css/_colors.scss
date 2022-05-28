@@ -2,18 +2,21 @@
   --main-color: #64C4A4;
   --second-color: #1A0A52;
   --text-color: #666666;
+  --star-color: #FFEE00;
   --bg-footer: #272727;
   --white: #fff;
   --black: #000;
   --radius: 10px;
   --transition: .3s all;
   --line-height:1.7;
+  --main-padding:80px;
   --shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 $main-color: var(--main-color);
 $second-color: var(--second-color);
 $text-color: var(--text-color);
+$star-color: var(--star-color);
 $bg-footer: var(--bg-footer);
 $white: var(--white);
 $black: var(--black);
@@ -21,3 +24,4 @@ $radius: var(--radius);
 $shadow: var(--shadow);
 $transition: var(--transition);
 $line-height: var(--line-height);
+$main-padding: var(--main-padding);

@@ -1,5 +1,10 @@
 <template>
-  <button class="btn" v-if="!isLink" @click="emitClick" :type="type">
+  <button
+    class="btn main_app_button"
+    v-if="!isLink"
+    @click="emitClick"
+    :type="type"
+  >
     <slot></slot>
   </button>
   <NuxtLink :to="toRoute" class="btn" v-else>
@@ -32,4 +37,17 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main_app_button {
+  background-color: $main-color;
+  color: $white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  min-width: 170px;
+  text-transform: capitalize;
+  &:focus {
+    box-shadow: none;
+  }
+}
+</style>

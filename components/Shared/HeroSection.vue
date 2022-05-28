@@ -37,7 +37,11 @@ export default {
       required: false,
       default: 'defaultImage',
       validator: function (value) {
-        return ['default', 'home', 'playground'].indexOf(value) !== -1
+        return (
+          ['default', 'home', 'playground', 'tournament', 'contact'].indexOf(
+            value
+          ) !== -1
+        )
       },
     },
   },
@@ -63,20 +67,29 @@ export default {
     inset: 0;
   }
   &_home {
-    background-image: url('../../assets/images/hero/home.png');
+    background-image: url('@/assets/images/hero/home.png');
+  }
+  &_playground {
+    background-image: url('@/assets/images/hero/playground.png');
+  }
+  &_tournament {
+    background-image: url('@/assets/images/hero/tournament.png');
+  }
+  &_contact {
+    background-image: url('@/assets/images/hero/contact.png');
   }
   .main_content {
     position: relative;
     z-index: 7;
     .hero_title {
-      text-transform: uppercase;
+      text-transform: capitalize;
       margin-bottom: 1.5rem;
       font-size: 2rem;
       font-weight: 500;
       letter-spacing: 5px;
     }
     .hero_sub_title {
-      text-transform: uppercase;
+      text-transform: capitalize;
       margin-bottom: 1.5rem;
       font-size: 3rem;
       font-weight: 700;

@@ -1,7 +1,7 @@
 <template>
   <header class="main_header_container">
     <b-navbar toggleable="lg" type="" fixed="top">
-      <div class="container">
+      <div class="container-fluid">
         <!-- //? start logo  -->
         <b-navbar-brand href="#">
           <nuxt-link to="/">Sportify</nuxt-link>
@@ -68,9 +68,9 @@ export default {
   mounted() {
     console.log(this.$i18n.locale)
     this.$cookiz.get('spotify_lang')
-    console.log(this.$cookiz.get('lang'))
+    console.log(this.$cookiz.get('spotify_lang'))
     // setCookie
-    if (this.$cookiz.get('lang') == 'ar') {
+    if (this.$cookiz.get('spotify_lang') == 'ar') {
       this.$i18n.locale = 'ar'
     } else {
       this.$i18n.locale = 'en'

@@ -117,6 +117,7 @@ export default {
   textarea.form-input {
     height: auto;
     resize: none;
+    padding: 1rem;
   }
   .show_icon {
     position: absolute;
