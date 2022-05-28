@@ -75,6 +75,7 @@ export default {
     } else {
       this.$i18n.locale = 'en'
     }
+    console.log(this.$i18n.locale)
   },
   methods: {
     switch_lang(local) {

@@ -1,5 +1,5 @@
 export default {
-  ssr: false,
+  ssr: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'sportify',
@@ -28,8 +28,11 @@ export default {
   // ,'~/plugins/datepicker.js'
   plugins: [
     '~/plugins/bootstrap-vue.js',
-    '~/plugins/validation.js',
-    '~/plugins/filter.js',
+    // '~/plugins/validation.js',
+    // '~/plugins/filter.js',
+    { src: '~/plugins/validation.js', ssr: false },
+    { src: '~/plugins/filter.js'},
+    { src: '~/plugins/vue-agile.js', ssr: false }
     // '~/plugins/axios.js',
   ],
 
@@ -59,8 +62,12 @@ export default {
     strategy: 'no_prefix',
     defaultLocale: 'en',
     lazy: true,
-    // locale: 'en',
-    detectBrowserLanguage: true,
+    locale: 'en',
+    // detectBrowserLanguage: true,
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'spotify_lang',
+    },
     vueI18n: {
       fallbackLocale: 'en',
       messages: {

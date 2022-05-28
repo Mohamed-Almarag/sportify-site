@@ -77,7 +77,11 @@
                   errors[0]
                 }}</span>
               </ValidationProvider>
-              <button>save</button>
+              <div
+                class="d-flex justify-content-center align-items-center mt-4"
+              >
+                <BaseAppButton>send</BaseAppButton>
+              </div>
             </form>
           </ValidationObserver>
         </div>

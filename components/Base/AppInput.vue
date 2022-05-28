@@ -16,7 +16,11 @@
       v-model="model"
       :disabled="disabled"
     />
-    <span @click="showPassword" v-if="isPassword" class="show_icon">pass</span>
+    <span @click="showPassword" v-if="isPassword" class="show_icon">
+      <svg class="icon">
+        <use xlink:href="~/static/svg/sprite.svg#eye"></use>
+      </svg>
+    </span>
   </div>
 </template>
 
@@ -126,11 +130,11 @@ export default {
     transform: translateY(-50%);
     right: 15px;
     cursor: pointer;
-    // .icon {
-    //   width: 22px;
-    //   height: 20px;
-    //   fill: #8f8f8f;
-    // }
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: #8f8f8f;
+    }
   }
 }
 .w_50 {
