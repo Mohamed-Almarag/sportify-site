@@ -32,7 +32,8 @@ export default {
     // '~/plugins/filter.js',
     { src: '~/plugins/validation.js', ssr: false },
     { src: '~/plugins/filter.js'},
-    { src: '~/plugins/vue-agile.js', ssr: false }
+    { src: '~/plugins/vue-agile.js', ssr: false },
+    { src: '~/plugins/vue-slick.js', ssr: false },
     // '~/plugins/axios.js',
   ],
 
