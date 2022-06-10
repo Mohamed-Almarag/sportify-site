@@ -93,7 +93,7 @@ export default {
 
 <style lang="scss" scoped>
 .app_footer_container {
-  background-color: #272727;
+  background-color: $bg-footer;
   padding-top: 80px;
   color: $white;
   .part_one {

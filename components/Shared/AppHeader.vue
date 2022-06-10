@@ -82,6 +82,24 @@ export default {
       this.$i18n.locale = local
       this.$cookiz.set('spotify_lang', local)
     },
+    handleScroll() {
+      let navbar = document.querySelector('.main_header_container .navbar')
+      if (process.browser && window.scrollY >= 10) {
+        navbar.classList.add('nav-scroll')
+      } else {
+        navbar.classList.remove('nav-scroll')
+      }
+    },
+  },
+  created() {
+    if (process.browser) {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  destroyed() {
+    if (process.browser) {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
   },
 }
 </script>
@@ -93,6 +111,10 @@ export default {
   }
   .navbar {
     padding: 1rem;
+    transition: $transition;
+    &.nav-scroll {
+      background-color: $bg-footer;
+    }
     //? start logo
     .navbar-brand {
       a {

@@ -13,9 +13,13 @@
         <p class="hero_text">{{ $t('text') }}</p>
       </template>
     </SharedHeroSection>
-    <!-- //? start hero section  -->
+    <!-- //? end hero section  -->
 
     <div class="all_home_sections_wrapper">
+      <!-- //? start About section  -->
+      <ModulesHomeAboutSection></ModulesHomeAboutSection>
+      <!--//? end About section  -->
+
       <!-- //? start sports section  -->
       <ModulesHomeSportsSection></ModulesHomeSportsSection>
       <!--//? end sports section  -->
@@ -75,7 +79,7 @@ export default {
   },
   async asyncData(context) {
     const home_data = await context.$axios.$get('/home')
-    console.log(home_data)
+    // console.log(home_data)
     return {
       home_data,
     }
