@@ -37,16 +37,18 @@
           <h5>sportify info</h5>
           <ul class="list-unstyled links">
             <li>
-              <nuxt-link to="/home">Privacy Policy</nuxt-link>
+              <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/home">Terms &amp; conditions</nuxt-link>
+              <nuxt-link to="/terms-conditions"
+                >Terms &amp; conditions</nuxt-link
+              >
             </li>
             <li>
-              <nuxt-link to="/home">Cookie Policy</nuxt-link>
+              <nuxt-link to="/cookie-policy">Cookie Policy</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/home">FAQ's</nuxt-link>
+              <nuxt-link to="/frequently-asked-questions">FAQ's</nuxt-link>
             </li>
           </ul>
         </div>

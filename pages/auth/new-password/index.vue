@@ -1,37 +1,15 @@
 <template>
   <div class="main-auth-wrapper">
     <div class="auth-form-modal">
-      <h3 class="auth-title text-capitalize text-center mb-5">sign up</h3>
+      <h3 class="auth-title text-capitalize text-center mb-5">
+        create new password
+      </h3>
       <div class="row">
-        <!-- //? Start Form  -->
-        <div class="col-md-6">
+        <!-- Start Form  -->
+        <div class="col-md-6 new_pass_form">
           <ValidationObserver ref="form">
             <form class="main-form-wrapper" @submit.prevent="submitForm">
-              <!-- Full Name -->
-              <ValidationProvider rules="required" v-slot="{ errors }">
-                <BaseAppInput
-                  :isLabel="false"
-                  type="text"
-                  placeholder="Full Name"
-                  v-model="userInfo.name"
-                ></BaseAppInput>
-                <span v-if="errors[0]" class="validation-error">{{
-                  errors[0]
-                }}</span>
-              </ValidationProvider>
-              <!-- Email  -->
-              <ValidationProvider rules="required|email" v-slot="{ errors }">
-                <BaseAppInput
-                  :isLabel="false"
-                  type="email"
-                  placeholder="Email"
-                  v-model="userInfo.email"
-                ></BaseAppInput>
-                <span v-if="errors[0]" class="validation-error">{{
-                  errors[0]
-                }}</span>
-              </ValidationProvider>
-              <!-- Password  -->
+              <!--//? Password  -->
               <ValidationProvider
                 rules="required|min:8|confirmed:confirm_password"
                 vid="confirm_password"
@@ -49,7 +27,7 @@
                   errors[0]
                 }}</span>
               </ValidationProvider>
-              <!-- Confirm Password  -->
+              <!--//? Confirm Password  -->
               <ValidationProvider
                 rules="required|confirmed:confirm_password"
                 v-slot="{ errors }"
@@ -66,38 +44,24 @@
                   errors[0]
                 }}</span>
               </ValidationProvider>
-              <ValidationProvider rules="required" v-slot="{ errors }">
-                <BaseAppSelectBox
-                  :isLabel="false"
-                  v-model="userInfo.gender"
-                  placeholder="Choose Your Gender"
-                  :options="get_genders"
-                ></BaseAppSelectBox>
-                <span v-if="errors[0]" class="validation-error">{{
-                  errors[0]
-                }}</span>
-              </ValidationProvider>
+
               <div
                 class="d-flex justify-content-center align-items-center mt-4"
               >
-                <BaseAppButton>sign up</BaseAppButton>
+                <BaseAppButton>send</BaseAppButton>
               </div>
             </form>
           </ValidationObserver>
         </div>
-        <!-- //? Start Photo  -->
+        <!-- Start Photo  -->
         <div class="photo-wrapper col-md-6">
           <img
             class="w-100"
-            src="@/assets/images/register/signup.png"
+            src="@/assets/images/register/new-pass.png"
             alt="signup-photo"
             draggable="false"
           />
         </div>
-      </div>
-      <div class="register_question">
-        <span class="ask_text"> Already have an account? </span>
-        <nuxt-link class="ask_link" to="/auth/login">Login</nuxt-link>
       </div>
     </div>
   </div>
@@ -106,18 +70,14 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-  name: 'Register',
+  name: 'New-Password',
   layout: 'auth-layout',
   data() {
     return {
       passwordType: 'password',
       userInfo: {
-        name: '',
-        email: '',
-        password: '',
-        c_password: '',
-        gender: '',
-        emirate_id: '',
+        password: null,
+        c_password: null,
       },
       genders: [
         { name: 'Male', value: 'Male' },
@@ -171,21 +131,13 @@ export default {
     .main-form-wrapper {
     }
   }
-  .register_question {
-    margin-top: 30px;
-    .ask_text {
-      color: $second-color;
-      font-weight: 400;
-    }
-    .ask_link {
-      color: $second-color;
-      font-weight: 500;
-      margin: 0 8px;
-      text-decoration: none;
-      transition: $transition;
-      &:hover {
-        color: $main-color;
-      }
+
+  // ? new_pass_form
+  .new_pass_form {
+    display: flex;
+    align-items: center;
+    span {
+      width: 100%;
     }
   }
 }

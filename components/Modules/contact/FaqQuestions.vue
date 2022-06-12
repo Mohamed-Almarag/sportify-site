@@ -12,8 +12,11 @@
             >
               <span class="d-block">{{ item.name }}</span>
               <div>
-                <svg class="icon">
+                <svg class="icon icon_plus">
                   <use xlink:href="~/static/svg/sprite.svg#plus"></use>
+                </svg>
+                <svg class="icon icon_minus">
+                  <use xlink:href="~/static/svg/sprite.svg#minus"></use>
                 </svg>
               </div>
             </b-button>
@@ -137,6 +140,26 @@ export default {
           fill: $main-color;
           &.icon_minus {
             fill: $second-color;
+          }
+        }
+      }
+      .collapsed {
+        .icon {
+          &.icon_plus {
+            display: block;
+          }
+          &.icon_minus {
+            display: none;
+          }
+        }
+      }
+      .not-collapsed {
+        .icon {
+          &.icon_plus {
+            display: none;
+          }
+          &.icon_minus {
+            display: block;
           }
         }
       }

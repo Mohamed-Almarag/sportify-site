@@ -31,7 +31,7 @@
                 <b-avatar size="sm"></b-avatar>
               </template>
               <b-dropdown-item>
-                <nuxt-link to="/">Profile</nuxt-link>
+                <nuxt-link to="/profile">Profile</nuxt-link>
               </b-dropdown-item>
               <b-dropdown-item>
                 <nuxt-link to="/">Profile</nuxt-link>

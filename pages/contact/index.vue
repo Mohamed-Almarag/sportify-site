@@ -128,20 +128,6 @@
           </div>
         </div>
         <!--//! end Contact Information  -->
-
-        <!--//! start FAQ’S -->
-        <div class="faq_questions_wrapper">
-          <div class="texts">
-            <h5 class="title">How Can We Help?</h5>
-            <p>
-              Lorem Ipsum is simply dummy text of theing and typesetting is
-              industry. Lorem Ipsum is simply dummy text of theing and
-              typesetting is industry.
-            </p>
-          </div>
-          <Modules-contact-FaqQuestions></Modules-contact-FaqQuestions>
-        </div>
-        <!--//! end FAQ’S -->
       </div>
     </div>
     <!-- //? end contact us  -->
@@ -207,7 +193,7 @@ export default {
     // ! contact_information
     .contact_information {
       max-width: 80%;
-      margin: 50px auto;
+      margin: 50px auto 0;
 
       .every_info {
         h6 {
@@ -222,17 +208,6 @@ export default {
           font-weight: 400;
           margin-bottom: 0;
         }
-      }
-    }
-    //! faq_questions_wrapper
-    .faq_questions_wrapper {
-      max-width: 80%;
-      margin: 50px auto;
-      p {
-        color: $text-color;
-        line-height: $line-height;
-        font-weight: 400;
-        margin-bottom: 0;
       }
     }
   }
