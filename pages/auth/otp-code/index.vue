@@ -2,46 +2,26 @@
   <div class="main-auth-wrapper">
     <div class="auth-form-modal">
       <h3 class="auth-title text-capitalize text-center mb-5">
-        create a new password
+        Forget password
       </h3>
-      <div class="auth_text text-center">
-        <p>Your new password must be different to previously used password</p>
-      </div>
       <div class="row">
         <!-- Start Form  -->
-        <div class="col-md-6 new_pass_form">
+        <div class="col-md-6">
+          <div class="auth_text">
+            <p>
+              We sent a 6 digit to your email please check your mail box linked
+              with our account
+            </p>
+          </div>
           <ValidationObserver ref="form">
             <form class="main-form-wrapper" @submit.prevent="submitForm">
-              <!--//? Password  -->
-              <ValidationProvider
-                rules="required|min:8|confirmed:confirm_password"
-                vid="confirm_password"
-                v-slot="{ errors }"
-              >
+              <!--//? Email  -->
+              <ValidationProvider rules="required|email" v-slot="{ errors }">
                 <BaseAppInput
                   :isLabel="false"
-                  :isPassword="true"
-                  :type="passwordType"
-                  placeholder="Password"
-                  @show-password="showPassword"
-                  v-model="userInfo.password"
-                ></BaseAppInput>
-                <span v-if="errors[0]" class="validation-error">{{
-                  errors[0]
-                }}</span>
-              </ValidationProvider>
-              <!--//? Confirm Password  -->
-              <ValidationProvider
-                rules="required|confirmed:confirm_password"
-                v-slot="{ errors }"
-              >
-                <BaseAppInput
-                  :isLabel="false"
-                  :isPassword="true"
-                  :type="passwordType"
-                  placeholder="Confirm Password"
-                  @show-password="showPassword"
-                  v-model="userInfo.c_password"
+                  type="email"
+                  placeholder="Email"
+                  v-model="userInfo.email"
                 ></BaseAppInput>
                 <span v-if="errors[0]" class="validation-error">{{
                   errors[0]
@@ -60,7 +40,7 @@
         <div class="photo-wrapper col-md-6">
           <img
             class="w-100"
-            src="@/assets/images/register/new-pass.png"
+            src="@/assets/images/register/code.png"
             alt="signup-photo"
             draggable="false"
           />
@@ -73,14 +53,13 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-  name: 'New-Password',
+  name: 'Otp-Code',
   layout: 'auth-layout',
   data() {
     return {
       passwordType: 'password',
       userInfo: {
-        password: null,
-        c_password: null,
+        email: '',
       },
       genders: [
         { name: 'Male', value: 'Male' },
@@ -109,6 +88,12 @@ export default {
     },
     handleRequest() {
       console.log('yes submit')
+      this.$router.replace(
+        this.localePath({
+          name: 'auth/check-email/id',
+          params: { id: this.userInfo.email },
+        })
+      )
     },
   },
   mounted() {
@@ -134,7 +119,6 @@ export default {
     .main-form-wrapper {
     }
   }
-
   .auth_text {
     p {
       color: $second-color;
@@ -142,14 +126,6 @@ export default {
       line-height: $line-height;
       font-size: 17px;
       margin-bottom: 1rem;
-    }
-  }
-  // ? new_pass_form
-  .new_pass_form {
-    display: flex;
-    align-items: center;
-    span {
-      width: 100%;
     }
   }
 }

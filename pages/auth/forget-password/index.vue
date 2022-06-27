@@ -85,6 +85,12 @@ export default {
     },
     handleRequest() {
       console.log('yes submit')
+      this.$router.replace(
+        this.localePath({
+          name: 'auth/check-email/id',
+          params: { id: this.userInfo.email },
+        })
+      )
     },
   },
   mounted() {
