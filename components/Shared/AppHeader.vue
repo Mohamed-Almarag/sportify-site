@@ -3,9 +3,12 @@
     <b-navbar toggleable="lg" type="" fixed="top">
       <div class="container-fluid">
         <!-- //? start logo  -->
-        <b-navbar-brand href="#">
+        <!-- <b-navbar-brand href="#">
           <nuxt-link to="/">Sportify</nuxt-link>
-        </b-navbar-brand>
+        </b-navbar-brand> -->
+        <li class="navbar-brand">
+          <nuxt-link to="/">Sportify</nuxt-link>
+        </li>
         <!-- //? end logo  -->
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -13,32 +16,35 @@
         <b-collapse id="nav-collapse" is-nav>
           <!-- //? start navbar routes  -->
           <b-navbar-nav class="m-auto main_links">
-            <b-nav-item href="#" v-for="(link, index) in links" :key="index">
+            <!-- <b-nav-item href="#" v-for="(link, index) in links" :key="index">
               <nuxt-link :to="link.path">{{ link.name }}</nuxt-link>
-            </b-nav-item>
+            </b-nav-item> -->
+
+            <li class="nav-item" v-for="(link, index) in links" :key="index">
+              <nuxt-link :to="link.path">{{ link.name }}</nuxt-link>
+            </li>
           </b-navbar-nav>
           <!-- //? end navbar routes  -->
 
           <!-- //?  start navbar lang && signup && authentication -->
           <div class="main_user_container">
             <b-dropdown id="dropdown-1" text="Lang" class="main_dropdown">
-              <b-dropdown-item @click="switch_lang('en')">En</b-dropdown-item>
-              <b-dropdown-item @click="switch_lang('ar')">ع</b-dropdown-item>
+              <!-- <b-dropdown-item @click="switch_lang('en')">En</b-dropdown-item>
+              <b-dropdown-item @click="switch_lang('ar')">ع</b-dropdown-item> -->
+              <li @click="switch_lang('en')" class="dropdown-item">En</li>
+              <li @click="switch_lang('ar')" class="dropdown-item">ع</li>
             </b-dropdown>
             <!-- //? user auth  -->
             <b-dropdown id="dropdown-1" class="main_dropdown">
               <template #button-content>
                 <b-avatar size="sm"></b-avatar>
               </template>
-              <b-dropdown-item>
+              <!-- <b-dropdown-item>
                 <nuxt-link to="/profile">Profile</nuxt-link>
-              </b-dropdown-item>
-              <b-dropdown-item>
-                <nuxt-link to="/">Profile</nuxt-link>
-              </b-dropdown-item>
-              <b-dropdown-item>
-                <nuxt-link to="/">Profile</nuxt-link>
-              </b-dropdown-item>
+              </b-dropdown-item> -->
+              <li class="dropdown-item">
+                <nuxt-link to="/profile">Profile</nuxt-link>
+              </li>
             </b-dropdown>
           </div>
           <!-- //? end navbar lang && signup && authentication -->
@@ -138,16 +144,16 @@ export default {
         }
         .nav-item {
           margin: 0 0.6rem;
-          .nav-link {
-            a {
-              color: $white;
-            }
-            .nuxt-link-exact-active {
-              &.nuxt-link-active {
-                color: $main-color;
-              }
+          a {
+            color: $white;
+          }
+          .nuxt-link-exact-active {
+            &.nuxt-link-active {
+              color: $main-color;
             }
           }
+          // .nav-link {
+          // }
         }
       }
     }

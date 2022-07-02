@@ -77,13 +77,13 @@ export default {
       return this.isArabic
     },
   },
-  async asyncData(context) {
-    const home_data = await context.$axios.$get('/home')
-    // console.log(home_data)
-    return {
-      home_data,
-    }
-  },
+  // async asyncData(context) {
+  //   const home_data = await context.$axios.$get('/home')
+  // console.log(home_data)
+  //   return {
+  //     home_data,
+  //   }
+  // },
 }
 </script>
 
