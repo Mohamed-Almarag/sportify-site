@@ -2,6 +2,7 @@
   <div class="main_website_container" :class="{ is_arabic: arabic_lang }">
     <SharedScrollTopButton></SharedScrollTopButton>
     <!-- //? start hero section  -->
+    <!-- <client-only> -->
     <SharedHeroSection bgImage="home">
       <template #title>
         <h3 class="hero_title">{{ $t('title') }}</h3>
@@ -13,6 +14,7 @@
         <p class="hero_text">{{ $t('text') }}</p>
       </template>
     </SharedHeroSection>
+    <!-- </client-only> -->
     <!-- //? end hero section  -->
 
     <div class="all_home_sections_wrapper">

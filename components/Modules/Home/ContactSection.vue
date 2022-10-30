@@ -7,94 +7,96 @@
           <div class="mb-5">
             <SharedMainTitle title="contact us"></SharedMainTitle>
           </div>
-          <!--//! start form validation  -->
-          <ValidationObserver ref="form">
-            <form @submit.prevent="submitForm">
-              <div class="row">
-                <!-- //? Name  -->
-                <div class="col-md-6 mb-3">
-                  <ValidationProvider rules="required" v-slot="{ errors }">
-                    <BaseAppInput
-                      :isLabel="false"
-                      type="text"
-                      placeholder="Name"
-                      v-model="userInfo.name"
-                    ></BaseAppInput>
-                    <span v-if="errors[0]" class="validation-error">{{
-                      errors[0]
-                    }}</span>
-                  </ValidationProvider>
+          <!--//* start form validation  -->
+          <client-only>
+            <ValidationObserver ref="form">
+              <form @submit.prevent="submitForm">
+                <div class="row">
+                  <!-- //? Name  -->
+                  <div class="col-md-6 mb-3">
+                    <ValidationProvider rules="required" v-slot="{ errors }">
+                      <BaseAppInput
+                        :isLabel="false"
+                        type="text"
+                        placeholder="Name"
+                        v-model="userInfo.name"
+                      ></BaseAppInput>
+                      <span v-if="errors[0]" class="validation-error">{{
+                        errors[0]
+                      }}</span>
+                    </ValidationProvider>
+                  </div>
+                  <!--//?  Email  -->
+                  <div class="col-md-6 mb-3">
+                    <ValidationProvider
+                      rules="required|email"
+                      v-slot="{ errors }"
+                    >
+                      <BaseAppInput
+                        :isLabel="false"
+                        type="email"
+                        placeholder="Email"
+                        v-model="userInfo.email"
+                      ></BaseAppInput>
+                      <span v-if="errors[0]" class="validation-error">{{
+                        errors[0]
+                      }}</span>
+                    </ValidationProvider>
+                  </div>
+                  <!--//?  Phone  -->
+                  <div class="col-md-6 mb-3">
+                    <ValidationProvider rules="required" v-slot="{ errors }">
+                      <BaseAppInput
+                        :isLabel="false"
+                        type="number"
+                        placeholder="Phone"
+                        v-model="userInfo.phone"
+                      ></BaseAppInput>
+                      <span v-if="errors[0]" class="validation-error">{{
+                        errors[0]
+                      }}</span>
+                    </ValidationProvider>
+                  </div>
+                  <!--//?  Subject  -->
+                  <div class="col-md-6 mb-3">
+                    <ValidationProvider rules="required" v-slot="{ errors }">
+                      <BaseAppInput
+                        :isLabel="false"
+                        type="text"
+                        placeholder="Subject"
+                        v-model="userInfo.subject"
+                      ></BaseAppInput>
+                      <span v-if="errors[0]" class="validation-error">{{
+                        errors[0]
+                      }}</span>
+                    </ValidationProvider>
+                  </div>
+                  <!--//?  Message  -->
+                  <div class="col-sm-12 mb-3">
+                    <ValidationProvider rules="required" v-slot="{ errors }">
+                      <BaseAppInput
+                        :isLabel="false"
+                        :isTextarea="true"
+                        type="text"
+                        placeholder="Message"
+                        v-model="userInfo.message"
+                      ></BaseAppInput>
+                      <span v-if="errors[0]" class="validation-error">{{
+                        errors[0]
+                      }}</span>
+                    </ValidationProvider>
+                  </div>
                 </div>
-                <!--//?  Email  -->
-                <div class="col-md-6 mb-3">
-                  <ValidationProvider
-                    rules="required|email"
-                    v-slot="{ errors }"
-                  >
-                    <BaseAppInput
-                      :isLabel="false"
-                      type="email"
-                      placeholder="Email"
-                      v-model="userInfo.email"
-                    ></BaseAppInput>
-                    <span v-if="errors[0]" class="validation-error">{{
-                      errors[0]
-                    }}</span>
-                  </ValidationProvider>
+                <div
+                  class="d-flex justify-content-center align-items-center mt-3"
+                >
+                  <BaseAppButton>send now</BaseAppButton>
                 </div>
-                <!--//?  Phone  -->
-                <div class="col-md-6 mb-3">
-                  <ValidationProvider rules="required" v-slot="{ errors }">
-                    <BaseAppInput
-                      :isLabel="false"
-                      type="number"
-                      placeholder="Phone"
-                      v-model="userInfo.phone"
-                    ></BaseAppInput>
-                    <span v-if="errors[0]" class="validation-error">{{
-                      errors[0]
-                    }}</span>
-                  </ValidationProvider>
-                </div>
-                <!--//?  Subject  -->
-                <div class="col-md-6 mb-3">
-                  <ValidationProvider rules="required" v-slot="{ errors }">
-                    <BaseAppInput
-                      :isLabel="false"
-                      type="text"
-                      placeholder="Subject"
-                      v-model="userInfo.subject"
-                    ></BaseAppInput>
-                    <span v-if="errors[0]" class="validation-error">{{
-                      errors[0]
-                    }}</span>
-                  </ValidationProvider>
-                </div>
-                <!--//?  Message  -->
-                <div class="col-sm-12 mb-3">
-                  <ValidationProvider rules="required" v-slot="{ errors }">
-                    <BaseAppInput
-                      :isLabel="false"
-                      :isTextarea="true"
-                      type="text"
-                      placeholder="Message"
-                      v-model="userInfo.message"
-                    ></BaseAppInput>
-                    <span v-if="errors[0]" class="validation-error">{{
-                      errors[0]
-                    }}</span>
-                  </ValidationProvider>
-                </div>
-              </div>
-              <div
-                class="d-flex justify-content-center align-items-center mt-3"
-              >
-                <BaseAppButton>send now</BaseAppButton>
-              </div>
-            </form>
-          </ValidationObserver>
+              </form>
+            </ValidationObserver>
+          </client-only>
         </div>
-        <!--//! end form validation  -->
+        <!--//* end form validation  -->
       </div>
     </div>
     <!-- //? end contact us  -->
